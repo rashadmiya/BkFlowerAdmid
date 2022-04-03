@@ -22,7 +22,7 @@ const ItemDetails = ({ route }) => {
                     <Text style={styles.headerStyle}>Price</Text>
                 </View>
                 <View style={styles.separetor} />
-                <View style={styles.itemContainer}>
+                <View style={{...styles.itemContainer}}>
 
                     <Image source={{ uri: itemsInfo.user_photo }}
                         style={{ height: windowHeight / 5.3, width: windowWidth / 3, backgroundColor: 'transparent', resizeMode: 'contain' }} />
@@ -42,44 +42,53 @@ const ItemDetails = ({ route }) => {
 
                 <View style={styles.infoDetail}>
                     {/* Occation data will be bellow */}
-                    <Text style={styles.infoHeader}>Occasion</Text>
-                    <Text style={styles.infoText}>anniversary</Text>
-
+                    <View style={styles.shadow}>
+                        <Text style={styles.infoHeader}>Occasion</Text>
+                        <Text style={styles.infoText}>anniversary</Text>
+                    </View>
                     {/* quantity section */}
+                    <View style={styles.shadow}>
                     <Text style={styles.infoHeader}>Quantity</Text>
                     <Text style={styles.infoText}>1</Text>
+                    </View>
 
                     {/* card message section */}
+                    <View style={styles.shadow}>
                     <Text style={styles.infoHeader}>Card Message</Text>
                     <Text style={styles.infoText}>
                         To my lovely wife,
                         Happy anniversary and to many more years together, I love you with all my heart.
                     </Text>
+                    </View>
                     <View style={styles.sizedBox} />
-                    <View style={styles.sizedBox} />
-                    <View style={styles.separetor} />
+                    {/* <View style={styles.sizedBox} /> */}
+                    {/* <View style={styles.separetor} /> */}
 
                     {/* deliver section */}
+                    <View style={styles.shadow}>
                     <Text style={styles.infoHeader}>Delivery Address</Text>
                     <Text style={styles.infoText}>
                         Salam / Block: Block 7 / Street: 707 Street / House: 18 / Recipient name: Amani Al Adsani / Recipient number: +965-94069044
                     </Text>
+                    </View>
 
                     {/* payment details here */}
+                    <View style={styles.shadow}>
                     <Text style={styles.infoHeader}>Payment details</Text>
 
                     <Text style={styles.infoText}> Payment method: KNET  </Text>
                     <Text style={styles.infoText}> Payment ID: 101202209027413646 </Text>
                     <Text style={styles.infoText}> Track ID: 31032022222705646 </Text>
                     <Text style={styles.infoText}> Reference ID: 209036027642 </Text>
-
+                    </View>
                     {/* client details section */}
+                    <View style={styles.shadow}>
                     <Text style={styles.infoHeader}>Client details</Text>
-
                     <Text style={styles.infoText}> Name: Munira </Text>
                     <Text style={styles.infoText}> Mobile: +965-99870766 </Text>
                     <Text style={styles.infoText}> Phone: </Text>
                     <Text style={styles.infoText}> Email address: eeda1999@gmail.com </Text>
+                    </View>
 
                 </View>
             </ScrollView>
@@ -111,7 +120,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingHorizontal: 15,
-        marginTop: 5
+        // marginTop: 5,
+        // new code
+        paddingVertical: 4,
+        shadowColor: "black",
+        shadowOffset: { width: 1, height: 1 },
+        shadowRadius: 1,
+        shadowOpacity: 0.1,
+        backgroundColor: "#fff",
+        borderRadius: 10,
+        elevation: 1,
     },
     itemNameStyle: {
         fontSize: 17,
@@ -124,7 +142,7 @@ const styles = StyleSheet.create({
     },
     infoDetail: {
         marginTop: 15,
-        paddingHorizontal: 15
+        // paddingHorizontal: 15
     },
     infoHeader: {
         fontSize: 16,
@@ -137,7 +155,7 @@ const styles = StyleSheet.create({
         // textDecorationLine: 'underline',
         // textDecorationStyle: "solid",
         // textDecorationColor: "#000",
-       
+
     },
     infoText: {
         fontSize: 14,
@@ -147,6 +165,18 @@ const styles = StyleSheet.create({
     },
     sizedBox: {
         height: 10,
+    },
+    shadow:{
+        paddingHorizontal:15,
+        paddingVertical: 4,
+        shadowColor: "black",
+        shadowOffset: { width: 1, height: 1 },
+        shadowRadius: 1,
+        shadowOpacity: 0.1,
+        backgroundColor: "#f2f2f2",
+        borderRadius: 10,
+        elevation: 1,
+        marginBottom:5
     }
 })
 
